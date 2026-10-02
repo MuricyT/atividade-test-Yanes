@@ -14,11 +14,14 @@ No app.js original, ele não passou nos seguintes testes:
 
 11.Produto deve possuir preço maior que zero x
 
-15.Deve permitir remover produto do carrinho x
-
 19.Cliente VIP deve receber desconto de 15% x
 
 20.Carrinho não deve aceitar produto com preço igual a zero x
 
 Alem disso notei problemas no HTML, como não ter forma visual de ver se é VIP ou muda de usuario, remover do carrinho apenas o mais recente item.
 Outras modificações que tavez seriam necessarias para um sistema completo, como a opção de remover pets, users e produtos, ou melhorias no design não iram ser feitas.
+
+Teste 8 o problema no código era a função cadastrarPet() lia o campo petTipo. value, mas não verificava se o utilizador tinha deixado a entrada em branco antes de salvar. correção adicionar uma verificação if para validar se foi preenchido.
+Teste 9 Problema de Conversão que podia aparecer NaN ou até negativos. Novamente correção usei if para fazer a conversão e verificar se é <0.
+Teste 11 e 20 vem na mesma fonte, o código testava apenas if (preco < 0), foi adicionada um verificação na condição para impedir isso.
+Teste 19 a função calcularTotal() o status de VIP para conceder desconto. Foi feitos duas modificações - adicionado o controle do cliente ativo (clienteVipAtivo) e dentro da função calcularTotal(), inseriu-se a condição if (clienteVipAtivo) to para aplicar corretamente o desconto de 15% exigido no caso de teste.
