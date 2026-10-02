@@ -16,5 +16,4 @@ No app.js original, ele não passou nos seguintes testes:
 20.Carrinho não deve aceitar produto com preço igual a zero x
 
 Alem disso notei problemas no HTML, como não ter forma visual de ver se é VIP ou muda de usuario, remover do carrinho apenas o mais recente item.
-Outras modificações que tavez seriam necessarias para um sistema completo, como a opção de remover pets, users e produtos não iram ser feitas.
-
+Outras modificações que tavez seriam necessarias para um sistema completo, como a opção de remover pets, users e produtos, ou melhorias no design não iram ser feitas.
