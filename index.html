@@ -12,8 +12,6 @@
       <p>Sistema de gerenciamento do PetShop</p>
     </header>
 
-    <!-- CARROSSEL -->
-
     <section class="carousel">
       <div class="slides">
         <div class="slide">
@@ -42,8 +40,6 @@
       <button class="next" onclick="nextSlide()">❯</button>
     </section>
 
-    <!-- CARDS -->
-
     <section class="cards">
       <div class="card">
         <img src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" />
@@ -60,6 +56,14 @@
           </div>
 
           <button onclick="criarCliente()">Cadastrar</button>
+
+          <label style="margin-top: 10px; font-weight: bold"
+            >Selecionar Cliente Ativo:</label
+          >
+          <select
+            id="clienteSelect"
+            onchange="selecionarClienteAtivo()"
+          ></select>
         </div>
 
         <ul id="listaClientes"></ul>
@@ -104,8 +108,26 @@
           <select id="produtoSelect"></select>
 
           <button onclick="adicionarCarrinho()">Adicionar</button>
-          <button onclick="removerCarrinho()">Remover</button>
-          <button onclick="finalizarCompra()">Finalizar</button>
+
+          <div style="display: flex; gap: 5px; margin-top: 5px">
+            <button
+              onclick="toggleModoRemover()"
+              style="flex: 1; background: #e76f51"
+            >
+              Remover Itens
+            </button>
+            <button
+              onclick="confirmarRemocao()"
+              id="btnConfirmarRemover"
+              style="flex: 1; background: #d90429; display: none"
+            >
+              Confirmar
+            </button>
+          </div>
+
+          <button onclick="finalizarCompra()" style="margin-top: 5px">
+            Finalizar
+          </button>
         </div>
 
         <h3 class="total">Total: R$ <span id="total">0</span></h3>
